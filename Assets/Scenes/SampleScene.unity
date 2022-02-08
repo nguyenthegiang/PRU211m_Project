@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: m_MovementSmoothing
+      value: 0.078
+      objectReference: {fileID: 0}
     - target: {fileID: 464098750339575383, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
       propertyPath: m_Name
       value: MainCharacter
