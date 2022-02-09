@@ -123,6 +123,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &213852346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 464098750339575376, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+  m_PrefabInstance: {fileID: 226605909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc7301790599a04ea1833af9dfe2179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &213852349 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 464098750339575380, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+  m_PrefabInstance: {fileID: 226605909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &226605909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 464098750339575376, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 213852349}
     - target: {fileID: 464098750339575376, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
       propertyPath: runSpeed
       value: 25
@@ -178,9 +198,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 213852346}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLanding
+      objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 464098750339575379, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 464098750339575381, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 464098750339575381, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
       propertyPath: m_SortingLayerID
