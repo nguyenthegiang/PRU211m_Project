@@ -53,5 +53,10 @@ public class PlayerMovement : MonoBehaviour
             heartManager.health--;
             heartManager.ChangeHearts();
         }
+        //End game if go out of hearts
+        if (heartManager.health <= 0)
+        {
+            Application.Quit();
+        }
     }
 }
