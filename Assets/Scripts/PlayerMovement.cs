@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     public CharacterController2D controller;
+    [SerializeField]
     public float runSpeed = 30f;
+    [SerializeField]
     public Animator animator;
+    [SerializeField]
+    public HeartManager heartManager;
+
     float horizontalMove = 0f;
     bool jump = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        //init heart manager
+        heartManager = gameObject.GetComponent<HeartManager>();
     }
 
     // Update is called once per frame
@@ -37,5 +44,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Hazard")
+        {
+            heartManager.health--;
+            heartManager.ChangeHearts();
+        }
     }
 }

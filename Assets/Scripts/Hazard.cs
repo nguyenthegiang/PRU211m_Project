@@ -21,7 +21,8 @@ public class Hazard : MonoBehaviour
         GameObject touchedCharacter = collision.gameObject;
         if (touchedCharacter.tag == "Player")
         {
-            Destroy(touchedCharacter);
+            //Destroy(touchedCharacter);
+            touchedCharacter.transform.position = new Vector3(-11.2f, 3.45f, 0);
         }
     }
 }
