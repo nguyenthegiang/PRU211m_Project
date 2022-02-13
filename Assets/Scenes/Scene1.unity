@@ -18655,7 +18655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32dc2902cdc5824daa38508c52d4e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xDistanceToMainCharacter: 2.5
+  xDistanceToMainCharacter: 1.5
   yDistanceToMainCharacter: 0
   xMoveDistance: 0
   yMoveDistance: 0.4
@@ -23428,10 +23428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32dc2902cdc5824daa38508c52d4e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xDistanceToMainCharacter: 0
+  xDistanceToMainCharacter: 2.5
   yDistanceToMainCharacter: 0
   xMoveDistance: 0
-  yMoveDistance: 0
+  yMoveDistance: 0.45
 --- !u!1001 &2020646286
 PrefabInstance:
   m_ObjectHideFlags: 0
