@@ -18658,7 +18658,7 @@ MonoBehaviour:
   xDistanceToMainCharacter: 2.5
   yDistanceToMainCharacter: 0
   xMoveDistance: 0
-  yMoveDistance: 0.45
+  yMoveDistance: 0.4
 --- !u!1001 &1696914645
 PrefabInstance:
   m_ObjectHideFlags: 0
