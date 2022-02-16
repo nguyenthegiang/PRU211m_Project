@@ -15,9 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool isJumping = false;
-    bool isJumpKeyReleased = true;
-    private float jumpTimeCounter;
-    public float jumpTime;
+  
     Timer timer;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
-            jumpTimeCounter = jumpTime;
             animator.SetBool("isJumping", true);
         }
         if (Input.GetButtonUp("Jump"))
