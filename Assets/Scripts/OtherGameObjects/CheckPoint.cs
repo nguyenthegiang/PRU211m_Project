@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class controls a checkpoint
 public class CheckPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //When MainCharacter passes the Checkpoint
+    //-> update the checkpoint of the MainCharacter so that it will respawn here
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hello");
+        GameObject touchedObject = collision.gameObject;
+        if (touchedObject.tag == "Player")
+        {
+             touchedObject.GetComponent<PlayerMovement>().checkPointPassed = transform.position;
+        }
     }
 }

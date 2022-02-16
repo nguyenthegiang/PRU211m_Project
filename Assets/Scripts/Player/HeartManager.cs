@@ -13,20 +13,6 @@ public class HeartManager : MonoBehaviour
     [SerializeField]
     public Sprite emptyHealth;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //hearts = GameObject.Find("heartbar").GetComponent<Canvas>().GetComponents<GameObject>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ChangeHearts()
     {
         for (int i = 0; i < hearts.Length; i++)

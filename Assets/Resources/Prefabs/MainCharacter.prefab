@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 464098750339575379}
   m_Layer: 3
   m_Name: MainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,6 +221,7 @@ MonoBehaviour:
   runSpeed: 20
   animator: {fileID: 0}
   heartManager: {fileID: 0}
+  checkPointPassed: {x: 0, y: 0, z: 0}
 --- !u!114 &464098750339575379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +242,6 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 464098749476345994}
   m_CeilingCheck: {fileID: 464098750112734580}
-  jumpTime: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
