@@ -62,8 +62,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("dead", true);
             StartCoroutine(waiter());
-                
-            
 
         }
         //End game if go out of hearts
