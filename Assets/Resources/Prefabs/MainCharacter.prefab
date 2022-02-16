@@ -219,6 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 464098750339575379}
   runSpeed: 20
+  animator: {fileID: 0}
+  heartManager: {fileID: 0}
 --- !u!114 &464098750339575379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +241,7 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 464098749476345994}
   m_CeilingCheck: {fileID: 464098750112734580}
+  jumpTime: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []

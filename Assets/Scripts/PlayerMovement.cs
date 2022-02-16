@@ -14,7 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public HeartManager heartManager;
 
     float horizontalMove = 0f;
-    bool jump = false;
+    bool isJumping = false;
+    bool isJumpKeyReleased = true;
+    private float jumpTimeCounter;
+    public float jumpTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +34,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
             animator.SetBool("isJumping", true);
         }
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+            animator.SetBool("isJumping", false);
+        }
+        if (Input.GetButton("Jump") && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                jumpTimeCounter -= Time.fixedDeltaTime;
+            } else
+            {
+                isJumping = false;
+            }
+        }
+
     }
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.deltaTime, jump);
-        jump = false;
+        controller.Move(horizontalMove * Time.deltaTime, isJumping);
+        //isJumping = false;
     }
 
     public void OnLanding()
