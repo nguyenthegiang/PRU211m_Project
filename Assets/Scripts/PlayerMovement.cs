@@ -18,11 +18,13 @@ public class PlayerMovement : MonoBehaviour
     bool isJumpKeyReleased = true;
     private float jumpTimeCounter;
     public float jumpTime;
+    Timer timer;
     // Start is called before the first frame update
     void Start()
     {
         //init heart manager
         heartManager = gameObject.GetComponent<HeartManager>();
+        timer = gameObject.AddComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -43,22 +45,13 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
-        if (Input.GetButton("Jump") && isJumping)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                jumpTimeCounter -= Time.fixedDeltaTime;
-            } else
-            {
-                isJumping = false;
-            }
-        }
+        
 
     }
     void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.deltaTime, isJumping);
-        //isJumping = false;
+        isJumping = false;
     }
 
     public void OnLanding()
@@ -70,13 +63,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            heartManager.health--;
-            heartManager.ChangeHearts();
+            animator.SetBool("dead", true);
+            StartCoroutine(waiter());
+                
+            
+
         }
         //End game if go out of hearts
         if (heartManager.health <= 0)
         {
             Application.Quit();
         }
+    }
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(1);
+        animator.SetBool("dead", false);
+        transform.position = new Vector3(-11.2f, 3.45f, 0);
+        heartManager.health--;
+        heartManager.ChangeHearts();
     }
 }

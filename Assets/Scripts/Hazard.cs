@@ -22,7 +22,6 @@ public class Hazard : MonoBehaviour
         if (touchedCharacter.tag == "Player")
         {
             //Destroy(touchedCharacter);
-            touchedCharacter.transform.position = new Vector3(-11.2f, 3.45f, 0);
         }
     }
 }
