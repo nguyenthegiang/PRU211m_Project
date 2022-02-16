@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class HeartManager : MonoBehaviour
 {
-    public int health;
+    //maximum number of health, set in Unity Editor
+    [SerializeField]
+    public int maxHealth;
+    [SerializeField]
     public int numOfHearts;
 
     public GameObject[] hearts;
@@ -13,20 +16,15 @@ public class HeartManager : MonoBehaviour
     [SerializeField]
     public Sprite emptyHealth;
 
+    public int health;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        //hearts = GameObject.Find("heartbar").GetComponent<Canvas>().GetComponents<GameObject>();
-
+        health = maxHealth;
+        numOfHearts = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    //Change the heart animation
     public void ChangeHearts()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -42,5 +40,19 @@ public class HeartManager : MonoBehaviour
                 hearts[i].GetComponent<SpriteRenderer>().enabled = false;
             }
         }
+    }
+
+    //minus health by 1
+    public void MinusHeart()
+    {
+        health--;
+        ChangeHearts();
+    }
+
+    //restore full health
+    public void RestoreHealth()
+    {
+        health = maxHealth;
+        ChangeHearts();
     }
 }
