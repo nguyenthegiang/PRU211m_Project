@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Movement & actions of MainCharacter
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping = false;
   
     Timer timer;
+
+    //the checkpoint at which the Character will respawn
+    public Vector3 checkPointPassed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
-        
-
     }
     void FixedUpdate()
     {
@@ -58,24 +61,49 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //if touch a Hazard -> die
         if (collision.gameObject.tag == "Hazard")
         {
             animator.SetBool("dead", true);
             StartCoroutine(waiter());
-
-        }
-        //End game if go out of hearts
-        if (heartManager.health <= 0)
-        {
-            Application.Quit();
         }
     }
+
+    //Use for Delay in Death animation
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(1);
         animator.SetBool("dead", false);
-        transform.position = new Vector3(-11.2f, 3.45f, 0);
+
+        if (heartManager.health > 0)
+        {
+            //respawn in checkpoint if still have HP
+            CheckpointRespawn();
+        }
+        else
+        {
+            //endgame if out of HP
+            fullRespawn();
+        }
+    }
+
+    //respawn mainCharacter at checkPoint (when still have hearts left)
+    void CheckpointRespawn()
+    {
+        //respawn
+        transform.position = new Vector3(checkPointPassed.x, checkPointPassed.y, 0);
+        //change HP
         heartManager.health--;
+        heartManager.ChangeHearts();
+    }
+
+    //respawn mainCharacter at the beginning of the game (when out of hearts)
+    void fullRespawn()
+    {
+        //respawn
+        transform.position = new Vector3(-11.2f, 3.45f, 0);
+        //restore HP
+        heartManager.health = 10;
         heartManager.ChangeHearts();
     }
 }
