@@ -40079,9 +40079,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8228810084115664028, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
       propertyPath: m_Name
       value: checkPoint2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228810084115664030, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228810084115664030, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1035142303
       objectReference: {fileID: 0}
     - target: {fileID: 8228810084115664031, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
       propertyPath: m_RootOrder

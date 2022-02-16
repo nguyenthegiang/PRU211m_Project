@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
         {
             heartManager.health--;
             heartManager.ChangeHearts();
+            //Change Position to the checkpoint
+            transform.position = new Vector3(-11.2f, 3.45f, 0);
         }
         //End game if go out of hearts
         if (heartManager.health <= 0)

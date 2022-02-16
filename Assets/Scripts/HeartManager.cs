@@ -27,7 +27,6 @@ public class HeartManager : MonoBehaviour
 
     }
 
-
     public void ChangeHearts()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -36,13 +35,11 @@ public class HeartManager : MonoBehaviour
             {
                 hearts[i].GetComponent<SpriteRenderer>().enabled = true;
                 //hearts[i].GetComponent<SpriteRenderer>().sprite = fullHealth;
-
             }
             else
             {
                 //hearts[i].GetComponent<SpriteRenderer>().sprite = emptyHealth;
                 hearts[i].GetComponent<SpriteRenderer>().enabled = false;
-
             }
         }
     }
