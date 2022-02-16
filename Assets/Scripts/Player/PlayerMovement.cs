@@ -92,9 +92,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //respawn
         transform.position = new Vector3(checkPointPassed.x, checkPointPassed.y, 0);
-        //change HP
-        heartManager.health--;
-        heartManager.ChangeHearts();
+        //minus HP
+        heartManager.MinusHeart();
     }
 
     //respawn mainCharacter at the beginning of the game (when out of hearts)
@@ -103,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         //respawn
         transform.position = new Vector3(-11.2f, 3.45f, 0);
         //restore HP
-        heartManager.health = 10;
-        heartManager.ChangeHearts();
+        heartManager.RestoreHealth();
     }
 }
