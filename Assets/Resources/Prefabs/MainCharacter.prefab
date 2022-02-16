@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 464098750339575377}
   - component: {fileID: 464098750339575376}
   - component: {fileID: 464098750339575379}
+  - component: {fileID: -2456113541462624727}
   m_Layer: 3
   m_Name: MainCharacter
   m_TagString: Player
@@ -135,8 +136,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 9529487
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 6474817916930609645, guid: 18626c35747920041ae4e865ec5a9f60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 464098750339575379}
-  runSpeed: 20
-  animator: {fileID: 0}
+  runSpeed: 25
+  animator: {fileID: 464098750339575380}
   heartManager: {fileID: 0}
   checkPointPassed: {x: 0, y: 0, z: 0}
 --- !u!114 &464098750339575379
@@ -244,4 +245,44 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 464098750112734580}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 464098750339575376}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2456113541462624727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464098750339575383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77058dd31a6bb964c94de290bcdfde4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  numOfHearts: 10
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHealth: {fileID: -205270267638800340, guid: b7394bc1a6afb73469d547cd5525f3ac, type: 3}
+  emptyHealth: {fileID: 6960772035834626590, guid: b7394bc1a6afb73469d547cd5525f3ac, type: 3}
+  health: 0
