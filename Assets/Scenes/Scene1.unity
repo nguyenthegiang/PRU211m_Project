@@ -40227,7 +40227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480729755217068428, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.22
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 480729755217068428, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40264,6 +40264,14 @@ PrefabInstance:
     - target: {fileID: 480729755217068530, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
       propertyPath: m_Name
       value: fakeSpike_Checkpoint1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480729755217068531, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 480729755217068531, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1035142303
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305cab3e90ab98144b59caa80290eeda, type: 3}
