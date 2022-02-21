@@ -16,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool isJumping = false;
-  
+
+    // check if player have control of main character
+    bool hasControl = true;
     Timer timer;
 
     //the checkpoint at which the Character will respawn
@@ -33,25 +35,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown("Jump"))
+        if (hasControl)
         {
-            isJumping = true;
-            animator.SetBool("isJumping", true);
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+            animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                isJumping = true;
+                animator.SetBool("isJumping", true);
+            }
+            if (Input.GetButtonUp("Jump"))
+            {
+                isJumping = false;
+                animator.SetBool("isJumping", false);
+            }
         }
-        if (Input.GetButtonUp("Jump"))
-        {
-            isJumping = false;
-            animator.SetBool("isJumping", false);
-        }
+        
     }
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.deltaTime, isJumping);
-        isJumping = false;
+        if (hasControl)
+        {
+            controller.Move(horizontalMove * Time.deltaTime, isJumping);
+            isJumping = false;
+        }
+        
     }
 
     public void OnLanding()
@@ -64,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         //if touch a Hazard -> die
         if (collision.gameObject.tag == "Hazard")
         {
+            
             animator.SetBool("dead", true);
             StartCoroutine(waiter());
         }
@@ -72,9 +83,14 @@ public class PlayerMovement : MonoBehaviour
     //Use for Delay in Death animation
     IEnumerator waiter()
     {
+        // disable player control
+        hasControl = false;
+
+        //stop all movement on main character
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
         yield return new WaitForSeconds(1);
         animator.SetBool("dead", false);
-
         if (heartManager.health > 0)
         {
             //respawn in checkpoint if still have HP
@@ -85,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
             //endgame if out of HP
             fullRespawn();
         }
+        //regain control of character
+        hasControl = true;
     }
 
     //respawn mainCharacter at checkPoint (when still have hearts left)
