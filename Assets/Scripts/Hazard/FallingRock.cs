@@ -6,6 +6,7 @@ public class FallingRock : MonoBehaviour
     bool fell = false;
     void Start()
     {
+        //current rigidbody of the falling rock is kinamatic ( cannot be effected by force)
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -23,14 +24,17 @@ public class FallingRock : MonoBehaviour
     {
         if(!fell) {
             if(other.gameObject.tag == "Player") {
+                //change type body of rock to dynamic (can be effected by gravity)
                rigidbody2D.isKinematic = false;
-               rigidbody2D.gravityScale = 1.4f;
+               rigidbody2D.gravityScale = 2f;
                fell = true;
             } 
         }
     }
       void OnCollisionEnter2D(Collision2D other) {
+          //if rock touch platformer 
         if(other.gameObject.tag ==  "Platformer") {
+            //change tag of rock from Hazard to Untagged
                    gameObject.tag = "Untagged";
                } 
     }
