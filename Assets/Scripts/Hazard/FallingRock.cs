@@ -3,6 +3,7 @@ using UnityEngine;
 public class FallingRock : MonoBehaviour
 {
     new Rigidbody2D rigidbody2D;
+    bool fell = false;
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -20,10 +21,18 @@ public class FallingRock : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player") {
-               rigidbody2D.isKinematic = false; 
+        if(!fell) {
+            if(other.gameObject.tag == "Player") {
+               rigidbody2D.isKinematic = false;
+               rigidbody2D.gravityScale = 1.4f;
+               fell = true;
+            } 
         }
-        
+    }
+      void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag ==  "Platformer") {
+                   gameObject.tag = "Untagged";
+               } 
     }
    
 }
