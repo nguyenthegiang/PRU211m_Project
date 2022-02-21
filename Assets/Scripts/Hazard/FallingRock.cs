@@ -4,17 +4,8 @@ public class FallingRock : MonoBehaviour
 {
     new Rigidbody2D rigidbody2D;
     bool fell = false;
-    void Start()
-    {
-        //current rigidbody of the falling rock is kinamatic ( cannot be effected by force)
-        rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    //
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
     /// object (2D physics only).
@@ -22,6 +13,7 @@ public class FallingRock : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         if(!fell) {
             if(other.gameObject.tag == "Player") {
                 //change type body of rock to dynamic (can be effected by gravity)
