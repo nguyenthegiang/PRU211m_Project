@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Movement & actions of MainCharacter
@@ -13,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     [SerializeField]
     public HeartManager heartManager;
-
     float horizontalMove = 0f;
     bool isJumping = false;
 
@@ -51,8 +49,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
                 animator.SetBool("isJumping", false);
             }
-        }
-        
+        }        
     }
     void FixedUpdate()
     {
@@ -76,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             animator.SetBool("dead", true);
+            
             StartCoroutine(waiter());
         }
     }
@@ -89,18 +87,18 @@ public class PlayerMovement : MonoBehaviour
         //stop all movement on main character
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
         animator.SetBool("dead", false);
         if (heartManager.health > 0)
         {
             //respawn in checkpoint if still have HP
             CheckpointRespawn();
-        }
-        else
-        {
-            //endgame if out of HP
-            fullRespawn();
-        }
+         }else
+        // {
+                SceneSwitcher.goToGameOverScene();
+        //     SceneSwitcher.goToGameOverScene()
+        //     //endgame if out of HP       
+        // }
         //regain control of character
         hasControl = true;
     }
@@ -113,13 +111,4 @@ public class PlayerMovement : MonoBehaviour
         //minus HP
         heartManager.MinusHeart();
     }
-
-    //respawn mainCharacter at the beginning of the game (when out of hearts)
-    void fullRespawn()
-    {
-        //respawn
-        transform.position = new Vector3(-11.2f, 3.45f, 0);
-        //restore HP
-        heartManager.RestoreHealth();
     }
-}
