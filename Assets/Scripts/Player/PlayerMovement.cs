@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }        
     }
+
     void FixedUpdate()
     {
         if (hasControl)
@@ -111,4 +112,4 @@ public class PlayerMovement : MonoBehaviour
         //minus HP
         heartManager.MinusHeart();
     }
-    }
+}
