@@ -18952,14 +18952,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: checkPoint1
       objectReference: {fileID: 0}
-    - target: {fileID: 8228810084115664030, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228810084115664030, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1035142303
-      objectReference: {fileID: 0}
     - target: {fileID: 8228810084115664031, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -19661,6 +19653,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_Size.y
+      value: 4.0460887
+      objectReference: {fileID: 0}
+    - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.732722
+      objectReference: {fileID: 0}
     - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -41385,6 +41385,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_Size.y
+      value: 3.449668
+      objectReference: {fileID: 0}
+    - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.4345114
+      objectReference: {fileID: 0}
     - target: {fileID: -854240537049079993, guid: 2aa4d195182b8d24ba0daa1fa2755502, type: 3}
       propertyPath: m_IsTrigger
       value: 1
