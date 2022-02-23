@@ -35,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (hasControl)
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            float moveValue = Input.GetAxisRaw("Horizontal");
+            moveHorizontal(moveValue);
 
             animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
@@ -51,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }        
     }
+
+    //move Character horizontally
+    public void moveHorizontal(float moveValue)
+    {
+        horizontalMove = moveValue * runSpeed;
+        controller.Move(horizontalMove * Time.deltaTime, isJumping);
+    }
+
     void FixedUpdate()
     {
         if (hasControl)
@@ -111,4 +120,4 @@ public class PlayerMovement : MonoBehaviour
         //minus HP
         heartManager.MinusHeart();
     }
-    }
+}

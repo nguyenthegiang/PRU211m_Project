@@ -2051,6 +2051,7 @@ GameObject:
   - component: {fileID: 843337341}
   - component: {fileID: 843337340}
   - component: {fileID: 843337343}
+  - component: {fileID: 843337344}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2152,6 +2153,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1871c3e20e62d9c4a9adcbdc492ed61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &843337344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843337338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5eadb474960b09418eba88c6051e173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &843823587 stripped
@@ -19607,7 +19620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523361214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 843337344}
+        m_TargetAssemblyTypeName: ButtonMovement, Assembly-CSharp
+        m_MethodName: MoveLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1523361214
 MonoBehaviour:
   m_ObjectHideFlags: 0
