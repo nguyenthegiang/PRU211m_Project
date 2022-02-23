@@ -35,8 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (hasControl)
         {
-            float moveValue = Input.GetAxisRaw("Horizontal");
-            moveHorizontal(moveValue);
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
             animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
@@ -51,13 +50,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isJumping", false);
             }
         }        
-    }
-
-    //move Character horizontally
-    public void moveHorizontal(float moveValue)
-    {
-        horizontalMove = moveValue * runSpeed;
-        controller.Move(horizontalMove * Time.deltaTime, isJumping);
     }
 
     void FixedUpdate()

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8228810084115664031}
   - component: {fileID: 8228810084115664030}
   - component: {fileID: 8228810084115664017}
-  - component: {fileID: -935017390031048523}
   - component: {fileID: -854240537049079993}
+  - component: {fileID: 3047644616035173452}
   m_Layer: 0
   m_Name: checkPoint
   m_TagString: Untagged
@@ -104,18 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-935017390031048523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8228810084115664028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa244f2abffc844fa2bccfdecc440d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-854240537049079993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,3 +130,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58064514, y: 3.314654}
   m_EdgeRadius: 0
+--- !u!114 &3047644616035173452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228810084115664028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa244f2abffc844fa2bccfdecc440d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 5595508171567407565, guid: 6ad1bf4fab62ca84d8e9dabe53f8bd11, type: 3}
