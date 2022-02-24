@@ -1,4 +1,4 @@
-##24/02:
+## 24/02:
   -	Giang:
     o	Build Game Android
       	https://youtu.be/Ska81xpB-Po
@@ -22,7 +22,7 @@
       	khi nhảy xuống sẽ có 1 gameobject ẩn detect collision → trong đó thì code chuyển sang Scene 2
 
 
-#Later
+# Later
   -	Thêm nhạc nền cho game
     o	nhạc chơi
     o	nhạc game menu
