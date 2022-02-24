@@ -12,9 +12,7 @@ public class JsonHandler : MonoBehaviour
 
     public void Save()
     {
-        print(data.sceneName);
         string json = JsonUtility.ToJson(data);
-        print(json);
         WriteToFile(file, json);
     }
 
@@ -52,7 +50,6 @@ public class JsonHandler : MonoBehaviour
             //throw exception to handle
             throw new System.Exception("File not found");
         }
-        return "";
     }
 
     private string GetFilePath(string fileName)

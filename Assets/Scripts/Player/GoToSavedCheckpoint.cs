@@ -1,0 +1,32 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+//Main character go to the checkpoint saved in file (if exist)
+public class GoToSavedCheckpoint : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        try
+        {
+            //load file
+            JsonHandler handler = gameObject.AddComponent<JsonHandler>();
+            handler.Load();
+            
+            //if data empty -> not go to checkpoint
+            if (handler.data.position.x == 0 && handler.data.position.y == 0)
+            {
+                throw new Exception();
+            }
+
+            //go to checkpoint
+            gameObject.transform.position = new Vector3(handler.data.position.x, handler.data.position.y, 0);
+        }
+        catch (Exception ex)
+        {
+            //if file not exist -> do nothing
+        }
+    }
+}
