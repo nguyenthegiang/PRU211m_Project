@@ -24,7 +24,9 @@ public class CheckPoint : MonoBehaviour
     //Update Checkpoint Data to file
     private void UpdateSavedPositionFile()
     {
-        handler.data = new SavedPositionData(transform.position, "Scene1");
+        handler.data = new SavedPositionData();
+        handler.data.position = transform.position;
+        handler.data.sceneName = "Scene1";
         handler.Save();
     }
 }

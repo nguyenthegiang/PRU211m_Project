@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,5 +24,20 @@ public class SceneSwitcher : MonoBehaviour
 
     public static void restartLastScene() {
         SceneManager.LoadSceneAsync(_lastSceneIndex);
+    }
+
+    //this method is called when user click the continue button in Game Menu
+    public void ContinueButtonClick()
+    {
+        try
+        {
+            JsonHandler handler = gameObject.AddComponent<JsonHandler>();
+            handler.Load();
+            loadSceneByName(handler.data.sceneName);
+        } catch (Exception ex)
+        {
+            //if can't find file -> go to Scene 1 (default)
+            loadSceneByName("Scene1");
+        }
     }
 }

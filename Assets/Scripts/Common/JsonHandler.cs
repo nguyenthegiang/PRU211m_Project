@@ -8,11 +8,13 @@ public class JsonHandler : MonoBehaviour
 {
     public SavedPositionData data;
 
-    public string file = "savedPosition.txt";
+    private string file = "savedPosition.txt";
 
     public void Save()
     {
+        print(data.sceneName);
         string json = JsonUtility.ToJson(data);
+        print(json);
         WriteToFile(file, json);
     }
 
@@ -47,6 +49,8 @@ public class JsonHandler : MonoBehaviour
         } else
         {
             Debug.LogWarning("File not found");
+            //throw exception to handle
+            throw new System.Exception("File not found");
         }
         return "";
     }
@@ -60,14 +64,8 @@ public class JsonHandler : MonoBehaviour
 //Store the position of the main character
 public class SavedPositionData
 {
-    public Vector3 Position { get; set; }
-    public string SceneName { get; set; }
-
-    public SavedPositionData(Vector3 position, string sceneName)
-    {
-        Position = position;
-        SceneName = sceneName;
-    }
+    public Vector3 position;
+    public string sceneName;
 
     public SavedPositionData()
     {
