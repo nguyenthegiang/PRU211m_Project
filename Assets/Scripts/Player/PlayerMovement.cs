@@ -94,13 +94,12 @@ public class PlayerMovement : MonoBehaviour
         {
             //respawn in checkpoint if still have HP
             CheckpointRespawn();
-         }else
-        // {
-                SceneSwitcher.goToGameOverScene();
-        //     SceneSwitcher.goToGameOverScene()
-        //     //endgame if out of HP       
-        // }
-        //regain control of character
+        } else
+        {
+            //go to Game Over Scene
+            SceneSwitcher.goToGameOverScene();
+        }
+
         hasControl = true;
     }
 
