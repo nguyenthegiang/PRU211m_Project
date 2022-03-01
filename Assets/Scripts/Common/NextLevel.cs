@@ -14,8 +14,8 @@ public class NextLevel : MonoBehaviour
     {
         if(other.gameObject.tag == "Player") {
             var currentScene = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log(++currentScene);
-            SceneManager.LoadSceneAsync(currentScene++);        
+            SceneManager.LoadSceneAsync(++currentScene);        
+            Debug.Log(currentScene);
         }
     }
 }
