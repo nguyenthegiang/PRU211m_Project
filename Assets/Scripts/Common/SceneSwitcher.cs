@@ -15,14 +15,19 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(name);
     }
-    public static  void goToGameOverScene() {
+    public static void goToGameOverScene() {
         //store the index of last scene
         _lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //load scene gameover
         SceneManager.LoadSceneAsync("GameOver");
     }
 
-    public static void restartLastScene() {
+    public void restartLastScene() {
+        //Delete file that store saved position to refresh
+        JsonHandler handler = gameObject.AddComponent<JsonHandler>();
+        handler.data = new SavedPositionData();
+        handler.Save();
+
         SceneManager.LoadSceneAsync(_lastSceneIndex);
     }
 
