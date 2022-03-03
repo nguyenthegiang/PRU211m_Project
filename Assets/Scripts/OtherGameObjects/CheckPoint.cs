@@ -7,6 +7,9 @@ public class CheckPoint : MonoBehaviour
 {
     [SerializeField]
     public JsonHandler handler;
+    //The Scene of this Checkpoint, used to Write to File
+    [SerializeField]
+    public string SceneName;
 
     //When MainCharacter passes the Checkpoint
     //-> update the checkpoint of the MainCharacter so that it will respawn here
@@ -26,7 +29,7 @@ public class CheckPoint : MonoBehaviour
     {
         handler.data = new SavedPositionData();
         handler.data.position = transform.position;
-        handler.data.sceneName = "Scene1";
+        handler.data.sceneName = SceneName;
         handler.Save();
     }
 }
