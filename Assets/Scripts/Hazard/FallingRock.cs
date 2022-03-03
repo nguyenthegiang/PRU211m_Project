@@ -18,7 +18,7 @@ public class FallingRock : MonoBehaviour
             if(other.gameObject.tag == "Player") {
                 //change type body of rock to dynamic (can be effected by gravity)
                rigidbody2D.isKinematic = false;
-               rigidbody2D.gravityScale = 2f;
+               rigidbody2D.gravityScale = 4f;
                fell = true;
             } 
         }
