@@ -16048,6 +16048,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10131014, y: 0.07273666}
   m_EdgeRadius: 0
+--- !u!114 &1039886996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039886992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b0c06d8b6665048bc355d4b33b6a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Scene3
 --- !u!95 &1039886997 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 464098750339575380, guid: 0e3d8dfcbf1011c4ba65386bbda93557, type: 3}
