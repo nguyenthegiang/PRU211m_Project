@@ -12,9 +12,11 @@ public class NextLevel : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player") {
+        //Load Scene Level 2
+        if (other.gameObject.tag == "Player")
+        {
             var currentScene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadSceneAsync(++currentScene);        
+            SceneManager.LoadSceneAsync(++currentScene);
             Debug.Log(currentScene);
         }
     }
