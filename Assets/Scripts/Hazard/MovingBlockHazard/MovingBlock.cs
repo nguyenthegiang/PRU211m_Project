@@ -30,7 +30,7 @@ public class MovingBlock : MonoBehaviour
         {
             Vector3 point = rotationPivot.transform.position;
             Vector3 axis = new Vector3(0, 0, 1);
-            transform.RotateAround(point, axis, 90 * Time.deltaTime);
+            transform.RotateAround(point, axis, 50 * Time.deltaTime);
 
             //stop rotate if reach position
             if (transform.position.x >= maxRotate)
@@ -42,7 +42,7 @@ public class MovingBlock : MonoBehaviour
         {
             Vector3 point = rotationPivot.transform.position;
             Vector3 axis = new Vector3(0, 0, 1);
-            transform.RotateAround(point, axis, -90 * Time.deltaTime);
+            transform.RotateAround(point, axis, -50 * Time.deltaTime);
 
             //stop rotate if reach position
             if (transform.position.x <= minRotate)
