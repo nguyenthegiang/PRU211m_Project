@@ -15,5 +15,6 @@ public class FallingCeilingCheck : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
             rb.AddForce(Vector2.down * 5f);
         }
+        
     }
 }
