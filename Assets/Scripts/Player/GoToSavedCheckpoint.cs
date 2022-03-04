@@ -32,7 +32,7 @@ public class GoToSavedCheckpoint : MonoBehaviour
             //go to checkpoint
             gameObject.transform.position = new Vector3(handler.data.position.x, handler.data.position.y, 0);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             //if file not exist -> do nothing
         }
