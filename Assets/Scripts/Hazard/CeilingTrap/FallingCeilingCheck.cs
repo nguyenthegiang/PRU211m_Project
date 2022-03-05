@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class FallingCeilingCheck : MonoBehaviour
 {
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject ceilingTrap = GameObject.Find("Grid/CeilingTrap");
+        GameObject ceilingTrap;
+        ceilingTrap = GameObject.Find("CeilingTrap");
 
+        if (ceilingTrap == null)
+        {
+            ceilingTrap = GameObject.Find("CeilingTrap(Clone)");
+        }
         if (collision.gameObject.tag == "Player")
         {
             Rigidbody2D rb = ceilingTrap.GetComponent<Rigidbody2D>();

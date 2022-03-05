@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CeilingTrap : MonoBehaviour
 {
-    [SerializeField]
-    GameObject ceilingTrap ;
+    private GameObject ceilingTrap ;
 
     Vector3 startPosition;
 
     private void Start()
     {
-        ceilingTrap = (GameObject)Resources.Load(@"Prefabs\CeilingTrap", typeof(GameObject));
+        ceilingTrap = (GameObject)Resources.Load(@"Prefabs\CeilingTrap");
 
 
         startPosition = transform.position;
@@ -21,15 +20,15 @@ public class CeilingTrap : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            Destroy(gameObject);
+
             Instantiate(ceilingTrap, startPosition, Quaternion.identity);
-            StartCoroutine(wait());
         }
     }
 
     IEnumerator wait()
     {
         yield return new WaitForSeconds(1);
-        Destroy(gameObject);
 
     }
 }
