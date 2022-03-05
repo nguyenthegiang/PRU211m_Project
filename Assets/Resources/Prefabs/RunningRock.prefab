@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2848186602470936449}
   - component: {fileID: 2131676398}
   - component: {fileID: 2131676399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RunningRock
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc61ddbed7f181d4fab7e5778858cf81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: -10
+  thrust: -100
+  RunningRockPrefab: {fileID: 4102042047251203946}
 --- !u!114 &2848186602470936449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,11 +124,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 756050fc24ab11c449da30f197f139a9, type: 2}
+  m_Material: {fileID: 6200000, guid: d61e96b09a2375d489b4d914100e207a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
