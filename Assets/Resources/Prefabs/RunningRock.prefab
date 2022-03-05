@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: -100
-  RunningRockPrefab: {fileID: 4102042047251203946}
 --- !u!114 &2848186602470936449
 MonoBehaviour:
   m_ObjectHideFlags: 0
