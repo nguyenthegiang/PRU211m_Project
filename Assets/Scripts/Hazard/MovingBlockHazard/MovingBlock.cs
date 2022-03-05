@@ -13,15 +13,17 @@ public class MovingBlock : MonoBehaviour
     bool rotateBack = false;
 
     //Max position: used to stop rotation
-    float maxRotate;
-    float minRotate;
+    float maxRotateX;
+    float minRotateX;
+    float maxRotateY;
 
     private void Start()
     {
         //find max/min rotate by rotationPivot
         float distance = rotationPivot.transform.position.x - transform.position.x;
-        maxRotate = transform.position.x + 2*distance;
-        minRotate = transform.position.x;
+        maxRotateX = transform.position.x + 2*distance;
+        minRotateX = transform.position.x;
+        maxRotateY = transform.position.y;
     }
 
     private void Update()
@@ -33,7 +35,7 @@ public class MovingBlock : MonoBehaviour
             transform.RotateAround(point, axis, 50 * Time.deltaTime);
 
             //stop rotate if reach position
-            if (transform.position.x >= maxRotate)
+            if (transform.position.x >= maxRotateX || transform.position.y >= maxRotateY)
             {
                 rotateForward = false;
             }
@@ -45,7 +47,7 @@ public class MovingBlock : MonoBehaviour
             transform.RotateAround(point, axis, -50 * Time.deltaTime);
 
             //stop rotate if reach position
-            if (transform.position.x <= minRotate)
+            if (transform.position.x <= minRotateX || transform.position.y >= maxRotateY)
             {
                 rotateBack = false;
             }
