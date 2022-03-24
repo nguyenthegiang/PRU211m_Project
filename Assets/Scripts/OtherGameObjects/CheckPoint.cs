@@ -28,8 +28,15 @@ public class CheckPoint : MonoBehaviour
     private void UpdateSavedPositionFile()
     {
         handler.data = new SavedPositionData();
+
+        //Update Position
         handler.data.position = transform.position;
         handler.data.sceneName = SceneName;
+
+        //Update Health
+        GameObject mainCharacter = GameObject.Find("MainCharacter");
+        handler.data.health = mainCharacter.GetComponent<HeartManager>().health;
+
         handler.Save();
     }
 }
