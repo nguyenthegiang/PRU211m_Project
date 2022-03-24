@@ -7,29 +7,6 @@ public class SceneSwitcher : MonoBehaviour
 {
     public static int _lastSceneIndex;
 
-    private void Start()
-    {
-        try
-        {
-            //load file
-            JsonHandler handler = gameObject.AddComponent<JsonHandler>();
-            handler.Load();
-            //if there's no data -> go to Scene 1
-            if (handler.data.sceneName == "")
-            {
-                throw new Exception();
-            }
-        }
-        catch (Exception ex)
-        {
-            //if can't find file -> go to Scene 1 (default)
-            //loadSceneByName("Scene1");
-            GameObject continueButton = GameObject.Find("Canvas/ButtonContinue");
-
-            continueButton.GetComponent<Button>().interactable = false;
-        }
-    }
-
     public void loadSceneByIndex(int index)
     {
         SceneManager.LoadSceneAsync(index);
