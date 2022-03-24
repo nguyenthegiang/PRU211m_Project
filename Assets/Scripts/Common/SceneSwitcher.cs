@@ -1,10 +1,34 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour
 {
-     public static int _lastSceneIndex;
+    public static int _lastSceneIndex;
+
+    private void Start()
+    {
+        try
+        {
+            //load file
+            JsonHandler handler = gameObject.AddComponent<JsonHandler>();
+            handler.Load();
+            //if there's no data -> go to Scene 1
+            if (handler.data.sceneName == "")
+            {
+                throw new Exception();
+            }
+        }
+        catch (Exception ex)
+        {
+            //if can't find file -> go to Scene 1 (default)
+            //loadSceneByName("Scene1");
+            GameObject continueButton = GameObject.Find("Canvas/ButtonContinue");
+
+            continueButton.GetComponent<Button>().interactable = false;
+        }
+    }
 
     public void loadSceneByIndex(int index)
     {
@@ -23,10 +47,7 @@ public class SceneSwitcher : MonoBehaviour
     }
 
     public void restartLastScene() {
-        //Delete file that store saved position to refresh
-        JsonHandler handler = gameObject.AddComponent<JsonHandler>();
-        handler.data = new SavedPositionData();
-        handler.Save();
+        removeSavedPosition();
 
         SceneManager.LoadSceneAsync(_lastSceneIndex);
     }
@@ -49,20 +70,27 @@ public class SceneSwitcher : MonoBehaviour
         } catch (Exception ex)
         {
             //if can't find file -> go to Scene 1 (default)
-            loadSceneByName("Scene1");
+            //loadSceneByName("Scene1");
+
+            GetComponent<Button>().interactable = false;
         }
     }
 
     //this method is called when user click the Start button in Game Menu
     public void StartButtonClick()
     {
-        //Delete file that store saved position to refresh
-        JsonHandler handler = gameObject.AddComponent<JsonHandler>();
-        handler.data = new SavedPositionData();
-        handler.Save();
+        removeSavedPosition();
 
         //start from beginning
         loadSceneByName("Scene1");
+    }
+
+    //Delete file that store saved position to refresh
+    public void removeSavedPosition()
+    {
+        JsonHandler handler = gameObject.AddComponent<JsonHandler>();
+        handler.data = new SavedPositionData();
+        handler.Save();
     }
 
     //Quit game
