@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip deathClip;
     // check if player have control of main character
     bool hasControl = true;
+    bool isDying = false;
     Timer timer;
 
     //the checkpoint at which the Character will respawn
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //if touch a Hazard -> die
-        if (collision.gameObject.tag == "Hazard")
+        if (collision.gameObject.tag == "Hazard" && !isDying)
         {
             
             animator.SetBool("dead", true);
@@ -90,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
     //Use for Delay in Death animation
     IEnumerator waiter()
     {
+        isDying = true;
         // disable player control
         hasControl = false;
 
@@ -107,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             //go to Game Over Scene
             SceneSwitcher.goToGameOverScene();
         }
-
+        isDying = false;
         hasControl = true;
     }
 

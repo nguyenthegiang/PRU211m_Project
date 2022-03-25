@@ -8,6 +8,7 @@ public class CeilingTrap : MonoBehaviour
 
     Vector3 startPosition;
 
+
     private void Start()
     {
         ceilingTrap = (GameObject)Resources.Load(@"Prefabs\CeilingTrap");
@@ -24,6 +25,7 @@ public class CeilingTrap : MonoBehaviour
 
             Instantiate(ceilingTrap, startPosition, Quaternion.identity);
         }
+        
     }
 
     IEnumerator wait()

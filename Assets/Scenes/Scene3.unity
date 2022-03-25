@@ -19483,11 +19483,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4819651298920513154, guid: 566b792ea4da059499388404bc502e39, type: 3}
   m_PrefabInstance: {fileID: 191519714}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &214969323 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6094531436637927309, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-  m_PrefabInstance: {fileID: 8778617996013327189}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &221495056
 GameObject:
   m_ObjectHideFlags: 3
@@ -23070,6 +23065,9 @@ MonoBehaviour:
   runSpeed: 5
   animator: {fileID: 1039886997}
   heartManager: {fileID: 1039886994}
+  audioSource: {fileID: 0}
+  jumpClip: {fileID: 0}
+  deathClip: {fileID: 0}
   checkPointPassed: {x: 0, y: 0, z: 0}
   speed: 5
   submarineBomb: {fileID: 365313199480876075, guid: 6721c620ee42dd2418bc5517cf940ac6, type: 3}
@@ -37289,11 +37287,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1274345579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6094531437144089513, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-  m_PrefabInstance: {fileID: 8778617996013327189}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1289509955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38988,11 +38981,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1863468642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6094531436478307064, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-  m_PrefabInstance: {fileID: 8778617996013327189}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865982858
 GameObject:
   m_ObjectHideFlags: 0
@@ -39123,7 +39111,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1904534199
 Transform:
@@ -39180,9 +39168,7 @@ MonoBehaviour:
   spikes:
   - {fileID: 790070427}
   - {fileID: 530763068}
-  - {fileID: 214969323}
-  - {fileID: 1863468642}
-  - {fileID: 1274345579}
+  isTriggered: 0
 --- !u!1 &1923748658
 GameObject:
   m_ObjectHideFlags: 0
@@ -40357,46 +40343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6094531436478307065, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531436478307065, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -454013753
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531436637927308, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531436637927308, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -454013753
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531436734359247, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531436734359247, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -454013753
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531437144089512, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531437144089512, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -454013753
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531438088881660, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6094531438088881660, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -454013753
-      objectReference: {fileID: 0}
     - target: {fileID: 8778617995183072131, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -40444,10 +40390,6 @@ PrefabInstance:
     - target: {fileID: 8778617995183072134, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
       propertyPath: m_Name
       value: FallingWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778617995183072134, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
-      propertyPath: m_TagString
-      value: Hazard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5d6882b1ba324296316f9c94aca12, type: 3}
