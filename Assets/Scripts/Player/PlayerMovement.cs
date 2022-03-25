@@ -15,6 +15,12 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool isJumping = false;
 
+    public AudioSource audioSource;
+    [Header("SoundFX")]
+    [SerializeField]
+    public AudioClip jumpClip;
+    [SerializeField]
+    public AudioClip deathClip;
     // check if player have control of main character
     bool hasControl = true;
     Timer timer;
@@ -27,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //init heart manager
         heartManager = gameObject.GetComponent<HeartManager>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         timer = gameObject.AddComponent<Timer>();
     }
 
@@ -42,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 isJumping = true;
+                audioSource.PlayOneShot(jumpClip);
                 animator.SetBool("isJumping", true);
             }
             if (Input.GetButtonUp("Jump"))
@@ -74,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             animator.SetBool("dead", true);
-            
+            audioSource.PlayOneShot(deathClip);
             StartCoroutine(waiter());
         }
     }

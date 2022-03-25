@@ -11,7 +11,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(index);
     }
-
+    void Awake()
+    {
+    }
     public void loadSceneByName(string name)
     {
         SceneManager.LoadSceneAsync(name);
@@ -25,7 +27,6 @@ public class SceneSwitcher : MonoBehaviour
 
     public void restartLastScene() {
         removeSavedPosition();
-
         SceneManager.LoadSceneAsync(_lastSceneIndex);
     }
 
@@ -55,7 +56,6 @@ public class SceneSwitcher : MonoBehaviour
     public void StartButtonClick()
     {
         removeSavedPosition();
-
         //start from beginning
         loadSceneByName("Scene1");
     }
