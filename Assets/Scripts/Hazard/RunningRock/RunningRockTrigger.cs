@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RunningRockTrigger : MonoBehaviour
 {
+    AudioSource audioSource;
     //only trigger once
     public bool isTriggered = false;
-
     //Trigger to make rock roll when player pass here
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,14 +20,12 @@ public class RunningRockTrigger : MonoBehaviour
                 {
                     runningRock = GameObject.Find("RunningRock(Clone)");
                 }
-
                 //roll it
                 RunningRock rollScript = runningRock.GetComponent<RunningRock>();
                 rollScript.Roll();
 
                 isTriggered = true;
             }
-        }
-        
+        }        
     }
 }
