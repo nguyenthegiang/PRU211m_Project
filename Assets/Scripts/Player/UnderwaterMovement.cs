@@ -8,6 +8,16 @@ public class UnderwaterMovement : PlayerMovement
     [SerializeField]
     GameObject submarineBomb;
 
+    [Header("SFX")]
+    [SerializeField]
+    AudioClip divingClip;
+    [SerializeField]
+    [Range(1f, 5f)] float divingVolume = 1f;
+
+    [SerializeField]
+    AudioClip explosionClip;
+    [SerializeField] [Range(1f, 10f)] float explosionVolume = 2f;
+
     float _horizontalMove;
     float _verticalMove;
     bool m_FacingRight = false;
@@ -20,6 +30,7 @@ public class UnderwaterMovement : PlayerMovement
         body = gameObject.GetComponent<Rigidbody2D>();
         objectHeight = gameObject.GetComponent<Renderer>().bounds.size.y;
         spawnPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - objectHeight, gameObject.transform.position.z);
+        audioSource= gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,12 +41,14 @@ public class UnderwaterMovement : PlayerMovement
         if (_horizontalMove > 0 && !m_FacingRight)
         {
             // ... flip the player.
+            audioSource.PlayOneShot(divingClip, divingVolume);
             Flip();
         }
         // Otherwise if the input is moving the player left and the player is facing right...
         else if (_horizontalMove < 0 && m_FacingRight)
         {
             // ... flip the player.
+            audioSource.PlayOneShot(divingClip, divingVolume);
             Flip();
         }
         Vector3 moveVector = new Vector3(_horizontalMove, _verticalMove, 0);
@@ -44,6 +57,7 @@ public class UnderwaterMovement : PlayerMovement
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bomb = Instantiate(submarineBomb, spawnPosition, Quaternion.identity);
+            audioSource.PlayOneShot(explosionClip, explosionVolume);
             bomb.GetComponent<Rigidbody2D>().AddForce(2f * Vector3.down);
         }
         spawnPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - objectHeight, gameObject.transform.position.z);
