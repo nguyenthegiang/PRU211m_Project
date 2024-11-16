@@ -1,3 +1,5 @@
 Xem công việc mình cần làm ở Project Plan
 
-# Deadline Fix bug: Thứ 6 25/03
+# Bug Report
+## Level 2
+Nhảy chết xong đá không quay trở lại
