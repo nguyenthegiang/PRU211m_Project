@@ -5,7 +5,6 @@ public class FallingRock : MonoBehaviour
     new Rigidbody2D rigidbody2D;
     bool fell = false;
     
-    //
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
     /// object (2D physics only).

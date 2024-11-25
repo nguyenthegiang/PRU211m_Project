@@ -10,3 +10,5 @@ Có thể do Grid ở các Map khác: Có các Object Platformer, Background, Ma
 
 # TODO
 ## FallingRock và Falling Snowman có cùng Script đoạn đầu -> Đem vào Inheritance hoặc Abstraction... (SOLID)
+
+## Tìm hiểu xem Script của FallingRock chạy như nào? (sao lại có 2 BoxCollider2D)
