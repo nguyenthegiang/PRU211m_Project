@@ -30,6 +30,8 @@ public class GoToSavedCheckpoint : MonoBehaviour
             }
 
             //go to checkpoint
+            Debug.Log("Scene name: " + handler.data.sceneName);
+            Debug.Log("Position: " + handler.data.position);
             gameObject.transform.position = new Vector3(handler.data.position.x, handler.data.position.y, 0);
         }
         catch (Exception)
