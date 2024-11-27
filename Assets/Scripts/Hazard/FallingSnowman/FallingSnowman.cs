@@ -71,6 +71,7 @@ public class FallingSnowman : MonoBehaviour
         this.gameObject.transform.position = new Vector3(posX, posY, 0);
         this.gameObject.transform.rotation = Quaternion.identity;
         fell = false;
+        shouldRotate = false;
     }
 
     public void SnowmanFall(Collision2D other)
