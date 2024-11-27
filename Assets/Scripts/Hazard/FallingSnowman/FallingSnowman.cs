@@ -20,26 +20,6 @@ public class FallingSnowman : MonoBehaviour
     // Whether the Snowman should rotate
     private bool shouldRotate = false; 
 
-    /// <summary>
-    /// Sent when another object enters a trigger collider attached to this
-    /// object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        if (!fell)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                //change type body of rock to dynamic (can be effected by gravity) -> Starts falling
-                rigidbody2D.isKinematic = false;
-                rigidbody2D.gravityScale = 4f;
-                fell = true;
-            }
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D other)
     {
         switch (other.gameObject.tag)
@@ -91,5 +71,20 @@ public class FallingSnowman : MonoBehaviour
         this.gameObject.transform.position = new Vector3(posX, posY, 0);
         this.gameObject.transform.rotation = Quaternion.identity;
         fell = false;
+    }
+
+    public void SnowmanFall(Collision2D other)
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        if (!fell)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                //change type body of rock to dynamic (can be effected by gravity) -> Starts falling
+                rigidbody2D.isKinematic = false;
+                rigidbody2D.gravityScale = 4f;
+                fell = true;
+            }
+        }
     }
 }
