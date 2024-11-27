@@ -52,6 +52,9 @@ public class FallingSnowman : MonoBehaviour
             {
                 transform.rotation = targetRotation; // Snap to the target rotation
                 shouldRotate = false;
+
+                // make Snowman no more Hazard
+                gameObject.tag = "Untagged";
             }
         }
     }
